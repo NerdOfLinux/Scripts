@@ -22,8 +22,6 @@ then
   echo "Fixing any issues..."
   #Check for errors
   brew doctor
-  #Update linuxbrew
-  brew update
   echo "Would you like to test linuxbrew y)es or n)o?"
   read test
   #If test is not equal to y
