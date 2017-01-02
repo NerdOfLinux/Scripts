@@ -193,7 +193,7 @@ else
 	echo "Finally, tell me your name for the client cert"
 	echo "Please, use one word only, no special characters"
 	read -p "Client name: " -e -i client CLIENT
-	echo "What rsa key size would you eant (2048 in the minimum recommended)?"
+	echo "What rsa key size would you want (2048 in the minimum recommended)?"
 	read -p "Size: " -e -i 2048 rsa
 	echo ""
 	echo "Would you like 128 bit, 192 bit, or 256 bit aes?"
