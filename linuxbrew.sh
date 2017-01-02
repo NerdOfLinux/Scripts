@@ -1,4 +1,4 @@
-#This script is to set up linuxbrew on Ubuntu
+#This script is to set up linuxbrew
 echo "Would you like to install linuxbrew y)es or n)o?"
 read answer
 #If the answer is not equal to y
