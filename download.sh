@@ -3,6 +3,8 @@
 if [ -d "Scripts" ]
 then
   echo "There is already a folder names Scripts, please remove or rename it."
+  #Exit
+  exit 0
 fi
 #If curl is installed
 if [ $(which curl) ]
@@ -14,9 +16,13 @@ fi
 unzip master.zip
 #Delete .zip file
 rm master.zip
-#Go into Scripts-master folder
-cd Scripts-master
+#Make foleder
+mkdir Scripts
 #Move files
-mv * ../Scripts
+mv Scripts-master/* ../Scripts
+#Remove extra folder
+rmdir Scripts-master
+#Change directory
+cd Scripts
 #Run the setup file
 sh setup.sh
