@@ -19,7 +19,7 @@ then
   #If variable response is equal to y
   if [ $response = "y" ]
   then
-    echo "This may create some issues, if it does, run the uninstall.sh script."
+    echo "This may create some issues, if it does, run the uninstall.sh script to remove the brew version."
     #Install the application
     brew install $app
   else
