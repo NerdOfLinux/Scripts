@@ -7,9 +7,9 @@ fi
 #If curl is installed
 if [ $(which curl) ]
 then
-  curl -O https://github.com/NerdOfLinux/Scripts/archive/master.zip
+  curl https://codeload.github.com/NerdOfLinux/Scripts/zip/master -o master.zip
 else
-  wget https://github.com/NerdOfLinux/Scripts/archive/master.zip
+  wget https://codeload.github.com/NerdOfLinux/Scripts/zip/master -o master.zip
 fi
 unzip master.zip -d Scripts
 #Delete .zip file
