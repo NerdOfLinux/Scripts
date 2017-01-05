@@ -11,10 +11,12 @@ then
 else
   wget https://codeload.github.com/NerdOfLinux/Scripts/zip/master -o master.zip
 fi
-unzip master.zip -d Scripts
+unzip master.zip
 #Delete .zip file
 rm master.zip
-#Go into Scripts folder
-cd Scripts
+#Go into Scripts-master folder
+cd Scripts-master
+#Move files
+mv * ../Scripts
 #Run the setup file
 sh setup.sh
