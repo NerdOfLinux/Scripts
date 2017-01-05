@@ -2,7 +2,7 @@
 #If the directory already exists
 if [ -d "Scripts" ]
 then
-  echo "There is already a folder names Scripts, please remove it or rename i
+  echo "There is already a folder names Scripts, please remove or rename it."
 #If curl is installed
 if [ $(which curl) ]
 then
