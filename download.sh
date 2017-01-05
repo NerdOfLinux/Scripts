@@ -19,7 +19,7 @@ rm master.zip
 #Make foleder
 mkdir Scripts
 #Move files
-mv Scripts-master/* ../Scripts
+mv Scripts-master/* Scripts
 #Remove extra folder
 rmdir Scripts-master
 #Change directory
