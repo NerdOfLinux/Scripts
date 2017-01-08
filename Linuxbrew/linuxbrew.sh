@@ -15,11 +15,11 @@ echo "Finishing required steps..."
 #Finish configuring
 PATH="$HOME/.linuxbrew/bin:$PATH"
 #If already in .bashrc
-if [ $(cat .bashrc | grep "export PATH="$HOME/.linuxbrew/bin:$PATH") ]
+if [ $(cat .bashrc | grep 'PATH="$HOME/.linuxbrew/bin:$PATH"') ]
 then
   echo ""
 else
-  echo 'export PATH="$HOME/.linuxbrew/bin:$PATH' >>~/.bashrc
+  echo 'PATH="$HOME/.linuxbrew/bin:$PATH"' >>~/.bashrc
 fi
 #If the install worked
 if [ $(which brew) ]
