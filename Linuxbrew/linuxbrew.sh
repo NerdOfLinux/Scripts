@@ -15,7 +15,7 @@ echo "Finishing required steps..."
 #Finish configuring
 PATH="$HOME/.linuxbrew/bin:$PATH"
 #If already in .bashrc
-if [ $(cat .bashrc | grep "export PATH="$HOME/.linuxbrew/bin:$PATH" ]
+if [ $(cat .bashrc | grep "export PATH="$HOME/.linuxbrew/bin:$PATH") ]
 then
   echo ""
 else
