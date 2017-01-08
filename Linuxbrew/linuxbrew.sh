@@ -14,7 +14,13 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master
 echo "Finishing required steps..."
 #Finish configuring
 PATH="$HOME/.linuxbrew/bin:$PATH"
-echo 'export PATH="$HOME/.linuxbrew/bin:$PATH"' >>~/.bashrc
+#If already in .bashrc
+if [ $(cat .bashrc | grep "export PATH="$HOME/.linuxbrew/bin:$PATH" ]
+then
+  echo ""
+else
+  echo 'export PATH="$HOME/.linuxbrew/bin:$PATH' >>~/.bashrc
+fi
 #If the install worked
 if [ $(which brew) ]
 then
