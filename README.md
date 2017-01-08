@@ -1,5 +1,6 @@
 # Scripts
-Random Linux Scripts
+Random Ubuntu Scripts
+These should work with debian and other debian-based distros
 
 If you need a server to run any of the scripts on here(like the OpenVPN script), DigitalOcean provides servers for only $5 a month! You can even get $10 credit by using this link: https://m.do.co/c/63b5eb03fcc5 
 
