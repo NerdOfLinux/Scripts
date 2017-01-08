@@ -51,7 +51,7 @@ then
 else
   echo "This application was not found."
 fi
-
+fi
 #If $1 is empty
 if [ -z $1 ]
 then
