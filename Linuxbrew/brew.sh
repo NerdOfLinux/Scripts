@@ -29,7 +29,7 @@ then
   exit 0
 #If the app location contains bin
 #Although apps installed with linuxbrew are in a path named bin, the script exits if the app was installed with linuxbrew
-elif [ $(which $app | grep "bin") ]
+elif [ $(which $app) ]
 then
   echo "The application was installed with apt."
   echo "Would you like to uninstall $app y)es or n)o?"
