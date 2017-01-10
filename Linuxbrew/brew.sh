@@ -20,6 +20,7 @@ then
   then
     #Remove the application using brew
     brew remove $app
+    exit 0
   else
     echo "Ok. Exiting..."
     #Exit
@@ -43,6 +44,7 @@ then
       exit 0
     fi
     apt purge $app -y
+    exit 0
   else
     echo "Ok. Exiting..."
     #Exit
@@ -50,6 +52,7 @@ then
   fi
 else
   echo "This application was not found."
+  exit 0
 fi
 fi
 #If $1 is empty

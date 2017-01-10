@@ -34,8 +34,6 @@ then
   if [ $test != "y" ]
   then
     echo "Ok. Install finished"
-    #Exit
-    exit 0
   else
     brew install hello
     if [ $(which hello) ]
@@ -45,8 +43,16 @@ then
       echo "An error has occured."
     fi
   fi
+  echo "Would you like to disable linuxbrew analytics y)es or n)o?"
+  read analytics
+  if [ $analytics = "y" ]
+  then
+    brew analytics off
+  fi
 else
   echo "There was a problem, try running this script again."
   #Exit
   exit 0
 fi
+
+
