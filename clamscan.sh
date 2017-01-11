@@ -13,7 +13,7 @@ then
   else
     folder=$1
   fi
-  clamscan -r --move="~/.found_viruses" $folder
+  clamscan -r --move=~/.found_viruses $folder
 else
   echo "Please install clamav."
   exit 0
