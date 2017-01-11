@@ -1,5 +1,5 @@
 #This script is to make sure you aren't installing two of the same thing.
-if [ $1 = "uninstall" ]
+if [ $1 = "remove" ]
 then
  #If $2 is empty
 if [ -z $2 ]
