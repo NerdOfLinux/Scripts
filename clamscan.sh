@@ -5,7 +5,7 @@ then
   then
     freshclam
   fi
-  mkdir ~/.found_viruses 2> /dev/null
+  mkdir found_viruses
   if [ -z $1 ]
   then
     echo "Please enter a folder to scan."
@@ -13,7 +13,7 @@ then
   else
     folder=$1
   fi
-  clamscan -r --move=~/.found_viruses $folder
+  clamscan -r --move=found_viruses $folder
 else
   echo "Please install clamav."
   exit 0
