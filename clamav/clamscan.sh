@@ -5,7 +5,8 @@ then
   #Check for root user
   if [ $(whoami) = "root" ]
   then
-    freshclam 2> /dev/null
+    #Update clamav definitions
+    freshclam --quiet --no-warnings
     #If ran correctly
     if [ $? -eq 0 ]
     then
