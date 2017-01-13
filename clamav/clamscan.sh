@@ -22,7 +22,7 @@ then
   if [ -z $1 ]
   then
     echo "Please enter a folder to scan."
-    read $folder
+    read folder
   else
     folder=1
   fi
