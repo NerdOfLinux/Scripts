@@ -17,7 +17,7 @@ then
   else
     folder=$1
   fi
-  #Scan
+  #Scan with max file size of 1GB
   clamscan -r --move=found_viruses --max-filesize=1024M  --max-scansize=1024M $folder
 else
   echo "Please install clamav."
