@@ -5,7 +5,7 @@ then
   #Check for root user
   if [ $(whoami) = "root" ]
   then
-    freshclam
+    freshclam 2> /dev/null
     #If ran correctly
     if [ $? -eq 0 ]
     then
