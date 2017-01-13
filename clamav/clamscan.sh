@@ -5,7 +5,14 @@ then
   #Check for root user
   if [ $(whoami) = "root" ]
   then
-    freshclam
+    #If ran correctly
+    if [ $(freshclam) ]
+    then
+      #Do nothing
+      echo ""
+    else
+      rm /var/log/clamav/freshclam.log
+    fi
   fi
   #Make a folder
   mkdir found_viruses 2> /dev/null
