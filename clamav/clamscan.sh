@@ -25,7 +25,7 @@ then
     echo "Please enter a folder to scan."
     read folder
   else
-    folder=1
+    folder=$1
   fi
   #Scan with max file size of 1GB
   clamscan -r --move=found_viruses --max-filesize=1024M  --max-scansize=1024M $folder
