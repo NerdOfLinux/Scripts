@@ -25,6 +25,7 @@ then
   wget https://codeload.github.com/rfjakob/earlyoom/zip/master -O earlyoom.zip
   unzip master.zip -d earlyoom
 fi
+cd earlyoom
 echo "Please enter the minimum free ram(leave blank if unsure):"
 read ram
 echo "Please enter the minimum free swap(leave blank if unsure):"
