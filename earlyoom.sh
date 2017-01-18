@@ -26,9 +26,9 @@ then
   unzip master.zip -d earlyoom
 fi
 echo "Please enter the minimum free ram(leave blank if unsure):"
-read $ram
+read ram
 echo "Please enter the minimum free swap(leave blank if unsure):"
-read $swap
+read swap
 #If blank, then use defualt
 ram="${ram:-10}"
 swap="${swap:-10}"
