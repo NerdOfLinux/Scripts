@@ -17,13 +17,13 @@ if [ $(which curl) ]
 then
   #Get and unzip repository
   curl https://codeload.github.com/rfjakob/earlyoom/zip/master -o earlyoom.zip
-  unzip master.zip -d earlyoom
+  unzip earlyoom.zip -d earlyoom
 #Else if wget is installed
 elif [ $(which wget) ]
 then
   #Get and unzip repository
   wget https://codeload.github.com/rfjakob/earlyoom/zip/master -O earlyoom.zip
-  unzip master.zip -d earlyoom
+  unzip earlyoom.zip -d earlyoom
 fi
 cd earlyoom
 echo "Please enter the minimum free ram(leave blank if unsure):"
