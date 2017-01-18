@@ -17,15 +17,15 @@ if [ $(which curl) ]
 then
   #Get and unzip repository
   curl https://codeload.github.com/rfjakob/earlyoom/zip/master -o earlyoom.zip
-  unzip earlyoom.zip -d earlyoom
+  unzip earlyoom.zip
 #Else if wget is installed
 elif [ $(which wget) ]
 then
   #Get and unzip repository
   wget https://codeload.github.com/rfjakob/earlyoom/zip/master -O earlyoom.zip
-  unzip earlyoom.zip -d earlyoom
+  unzip earlyoom.zip
 fi
-cd earlyoom
+cd earlyoom-master
 echo "Please enter the minimum free ram(leave blank if unsure):"
 read ram
 echo "Please enter the minimum free swap(leave blank if unsure):"
@@ -43,6 +43,7 @@ make install
 sudo systemctl enable earlyoom
 #Start now
 sudo systemctl start earlyoom
+cd ..
 #Delete folder and zip file
-rm -rf earlyoom
+rm -rf earlyoom-master
 rm earlyoom.zip
