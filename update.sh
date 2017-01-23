@@ -25,6 +25,7 @@ then
 		rm /var/lib/dpkg/lock
 		dpkg --configure -a
 		apt update
+		apt -f -y install
 	#Else if $1 is clean
 	elif [ $1 = "clean" ]
 	then
@@ -40,10 +41,10 @@ then
 	if [ -z $1 ]
 	then
 		echo "Updating package indexes..."
-		apt update
+		apt- update
 		"Updating..."
-		apt upgrade -y
-		apt dist-upgrade -y
+		apt-get upgrade -y
+		apt-get dist-upgrade -y
 	#Else if $1 is fix
 	elif [ $1 = "fix" ]
 	then
@@ -51,14 +52,15 @@ then
 		rm /var/cache/apt/archives/lock
 		rm /var/lib/dpkg/lock
 		dpkg --configure -a
-		apt update
+		apt-get update
+		apt-get -f -y install
 	#Else if $1 is clean
 	elif [ $1 = "clean" ]
 	then
 		echo "Cleaning apt cache..."
-		apt clean
-		apt autoclean
+		apt-get clean
+		apt-get autoclean
 		echo "Removing old/unused packages..."
-		apt autoremove -y
+		apt-get autoremove -y
 	fi
 fi
