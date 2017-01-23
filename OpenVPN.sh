@@ -246,7 +246,9 @@ topology subnet
 server 10.8.0.0 255.255.255.0
 cipher AES-"$aes"-CBC
 auth SHA"$sha"
-ifconfig-pool-persist ipp.txt" > /etc/openvpn/server.conf
+ifconfig-pool-persist ipp.txt
+#Uncomment the below line to restric tls-cipher to be more secure
+#tls-cipher TLS-DHE-RSA-WITH-AES-256-GCM-SHA384" > /etc/openvpn/server.conf
 	echo 'push "redirect-gateway def1 bypass-dhcp"' >> /etc/openvpn/server.conf
 	# DNS
 	case $DNS in
