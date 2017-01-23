@@ -1,3 +1,30 @@
+#Check for $1
+if [ -z $1 ]
+then
+  #Do nothing
+  echo ""
+elif [ $1 = "setup" ]
+then
+  if [ $(whoami) != "root" ]
+  then
+    echo "Please run as root."
+    exit 0
+  fi
+  #Check for apt
+  if [ $(which apt) ]
+  then
+    #Install required packages
+    apt install -y build-essential curl git python-setuptools ruby
+  #Check for apt-get
+  elif [ $(which apt-get) ]
+  then
+    #Install required packages
+    apt-get install -y build-essential curl git python-setuptools ruby
+  else
+    echo "Sorry, this script can't install build-essential, curl, git, python-setuptools, and ruby."
+    echo "Please install them, then run this script again."
+    exit 0
+fi
 #This script is to set up linuxbrew
 echo "Would you like to install linuxbrew y)es or n)o?"
 read answer
@@ -8,6 +35,17 @@ then
   #Exit
   exit 0
 fi
+#Check for ruby
+if [ $(which ruby) ]
+then
+  #Do nothing
+  echo ""
+else
+  #Tell user to install ruby
+  echo "Please run ./install.sh setup"
+  exit 0
+fi
+      
 echo "Downloading and running setup..."
 #Download and run the setup
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install)"
