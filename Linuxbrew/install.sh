@@ -24,6 +24,7 @@ then
     echo "Sorry, this script can't install build-essential, curl, git, python-setuptools, and ruby."
     echo "Please install them, then run this script again."
     exit 0
+  fi
 fi
 #This script is to set up linuxbrew
 echo "Would you like to install linuxbrew y)es or n)o?"
