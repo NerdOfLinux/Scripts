@@ -165,6 +165,7 @@ if [[ -e /etc/openvpn/server.conf ]]; then
 else
 	clear
 	echo 'Welcome to this quick OpenVPN "road warrior" installer'
+	echo "Use this at your own risk, not everything may work correctly. If something doesn't work, simply run this script again and choose uninstall, then try again."
 	echo "Please be sure to type everything correctly or else there may be problems(if you're not sure, the defualt settings should be fine for most people)."
 	echo ""
 	# OpenVPN setup and first user creation
