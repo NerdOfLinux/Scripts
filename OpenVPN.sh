@@ -165,6 +165,7 @@ if [[ -e /etc/openvpn/server.conf ]]; then
 else
 	clear
 	echo 'Welcome to this quick OpenVPN "road warrior" installer'
+	echo "Please be sure to type everything correctly or else there may be problems(if you're not sure, the defualt settings should be fine for most people)."
 	echo ""
 	# OpenVPN setup and first user creation
 	echo "I need to ask you a few questions before starting the setup"
@@ -196,8 +197,50 @@ else
 	echo "What rsa key size would you want (2048 in the minimum recommended)?"
 	read -p "Size: " -e -i 2048 rsa
 	echo ""
-	echo "Would you like 128 bit, 192 bit, or 256 bit aes?"
-	read -p "Encryption: " -e -i 128 aes
+	echo "Which cipher would you like?"
+	echo "   1) AES"
+	echo "   2) CAMELLIA"
+	read -p "Cipher: " -e -i 1 cipher
+	echo ""
+	if [ $cipher = "1" ]
+	then
+		echo "Which AES size would you like?"
+		echo "   1) 128"
+		echo "   2) 192"
+		echo "   3) 256"
+		read -p "Encryption: " -e -i 1 aes
+		if [ $aes = "1" ]
+		then
+			aes=128
+		elif [ $aes = "2" ]
+		then
+			aes=192
+		elif [ $aes = "3" ]
+		then
+			aes=256
+		fi
+		encryption="AES-"$aes"-CBC"
+	elif [ $cipher = "2" ]
+			echo "Which CAMELLIA size would you like?"
+		echo "   1) 128"
+		echo "   2) 192"
+		echo "   3) 256"
+		read -p "Encryption: " -e -i 1 camellia
+		if [ $camellia = "1" ]
+		then
+			camellia=128
+		elif [ $camellia = "2" ]
+		then
+			camellia=192
+		elif [ $camellia = "3" ]
+		then
+			camellia=256
+		fi
+		encryption="CAMELLIA-"$camellia"-CBC"
+	fi
+	echo ""
+	echo "How often would you like to renegotiate the keys?(if you're unsure, just press enter)"
+	read "reneg-secs: " -e -i 3600 reneg
 	echo ""
 	echo "What SHA size do you want(256,384,512)?"
 	echo -p "SHA: " -e -i 256 sha
@@ -244,12 +287,14 @@ key server.key
 dh dh.pem
 topology subnet
 server 10.8.0.0 255.255.255.0
-cipher AES-"$aes"-CBC
+cipher "$encryption"
 auth SHA"$sha"
 ifconfig-pool-persist ipp.txt
 #Uncomment the below line to restric tls-cipher to be more secure
-#tls-cipher TLS-DHE-RSA-WITH-AES-256-GCM-SHA384" > /etc/openvpn/server.conf
-	echo 'push "redirect-gateway def1 bypass-dhcp"' >> /etc/openvpn/server.conf
+#tls-cipher TLS-DHE-RSA-WITH-AES-256-GCM-SHA384
+reneg-sec $reneg
+" > /etc/openvpn/server.conf
+echo 'push "redirect-gateway def1 bypass-dhcp"' >> /etc/openvpn/server.conf
 	# DNS
 	case $DNS in
 		1) 
@@ -366,7 +411,8 @@ remote-cert-tls server
 comp-lzo
 verb 3
 auth SHA"$sha"
-cipher AES-"$aes"-CBC" > /etc/openvpn/client-common.txt
+cipher "$encryption"
+reneg-sec 0" > /etc/openvpn/client-common.txt
 	# Generates the custom client.ovpn
 	newclient "$CLIENT"
 	echo ""
