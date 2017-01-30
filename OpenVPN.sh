@@ -221,9 +221,9 @@ else
 			aes=256
 		fi
 		encryption="AES-"$aes"-CBC"
-		fi
 	elif [ $cipher = "2" ]
-			echo "Which CAMELLIA size would you like?"
+	then
+		echo "Which CAMELLIA size would you like?"
 		echo "   1) 128"
 		echo "   2) 192"
 		echo "   3) 256"
@@ -239,7 +239,6 @@ else
 			camellia=256
 		fi
 		encryption="CAMELLIA-"$camellia"-CBC"
-		fi
 	fi
 	echo ""
 	echo "How often would you like to renegotiate the keys?(if you're unsure, just press enter)"
