@@ -41,7 +41,7 @@ then
 	if [ -z $1 ]
 	then
 		echo "Updating package indexes..."
-		apt- update
+		apt-get update
 		"Updating..."
 		apt-get upgrade -y
 		apt-get dist-upgrade -y
