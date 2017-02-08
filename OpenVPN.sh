@@ -242,7 +242,7 @@ else
 	fi
 	echo ""
 	echo "How often would you like to renegotiate the keys?(if you're unsure, just press enter)"
-	read "reneg-secs: " -e -i 3600 reneg
+	echo -p  "reneg-secs: " -e -i 3600 reneg
 	echo ""
 	echo "What SHA size do you want(256,384,512)?"
 	echo -p "SHA: " -e -i 256 sha
