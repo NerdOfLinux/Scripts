@@ -35,6 +35,7 @@ then
 		echo "Removing old/unused packages..."
 		apt autoremove -y
 	fi
+#For older systems that don't have apt
 elif [ $(which apt-get) ]
 then
 	#If $1 is empty
