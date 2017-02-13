@@ -10,7 +10,8 @@ fi
 if [ $(which curl) ]
 then
   curl https://codeload.github.com/NerdOfLinux/Scripts/zip/master -o master.zip
-else
+#Else if wget is installed
+elif [ $(which wget) ]
   wget https://codeload.github.com/NerdOfLinux/Scripts/zip/master -O master.zip
 fi
 unzip master.zip
