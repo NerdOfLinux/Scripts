@@ -201,6 +201,7 @@ else
 	echo "Which cipher would you like?"
 	echo "   1) AES"
 	echo "   2) CAMELLIA"
+	echo "   3) Custom(not recommended)"
 	read -p "Cipher: " -e -i 1 cipher
 	echo ""
 	if [ $cipher = "1" ]
@@ -239,6 +240,10 @@ else
 			camellia=256
 		fi
 		encryption="CAMELLIA-"$camellia"-CBC"
+	elif [ $cipher = "3"]
+	then
+		echo "Please enter the cipher you would like to use(from openvpn --show-ciphers)"
+		read -p "Cipher: " -e -i aes-256-cbc encryption
 	fi
 	echo ""
 	echo "How often would you like to renegotiate the keys?(if you're unsure, just press enter)"
