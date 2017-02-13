@@ -13,11 +13,12 @@ then
       #Do nothing
       echo ""
     else
+      #Apply fix
       rm /var/log/clamav/freshclam.log
       freshclam
     fi
   fi
-  #Make a folder
+  #Make a folder named found_viruses(nothing will happen if it already exists)
   mkdir found_viruses 2> /dev/null
   #If $1 is empty
   if [ -z $1 ]
@@ -29,6 +30,7 @@ then
   fi
   #Scan with max file size of 1GB
   clamscan -r --move=found_viruses --max-filesize=1024M  --max-scansize=1024M $folder
+#If freshclam is not found
 else
   echo "Please install clamav."
   exit 0
