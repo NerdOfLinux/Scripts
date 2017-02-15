@@ -13,6 +13,8 @@ then
   #Exit
   exit 0
 fi
+if [ -z $1 ]
+then
 if [ $(which curl) ]
 then
   #Get and unzip repository
@@ -47,3 +49,12 @@ cd ..
 #Delete folder and zip file
 rm -rf earlyoom-master
 rm earlyoom.zip
+elif [ $1 = "uninstall" ]
+#Uninstall earlyoom
+  curl https://codeload.github.com/rfjakob/earlyoom/zip/master -o earlyoom.zip
+  unzip earlyoom.zip
+  make uninstall
+  make uninstall-initscript
+  #Clean up
+  rm -r earlyoom
+  rm earlyoom.zip
