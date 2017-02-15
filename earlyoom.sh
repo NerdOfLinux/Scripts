@@ -51,6 +51,7 @@ then
   rm -r earlyoom-master
   rm earlyoom.zip
 elif [ $1 = "uninstall" ]
+then
 #Uninstall earlyoom
   curl https://codeload.github.com/rfjakob/earlyoom/zip/master -o earlyoom.zip
   unzip earlyoom.zip
