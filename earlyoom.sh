@@ -58,3 +58,4 @@ elif [ $1 = "uninstall" ]
   #Clean up
   rm -r earlyoom
   rm earlyoom.zip
+fi
