@@ -55,10 +55,10 @@ then
 #Uninstall earlyoom
   curl https://codeload.github.com/rfjakob/earlyoom/zip/master -o earlyoom.zip
   unzip earlyoom.zip
-  cd earlyooom-master
+  cd earlyoom-master
   make uninstall
   make uninstall-initscript
   #Clean up
-  rm -r earlyoom
+  rm -r earlyoom-master
   rm earlyoom.zip
 fi
