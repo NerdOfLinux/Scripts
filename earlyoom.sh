@@ -59,6 +59,7 @@ then
   make uninstall
   make uninstall-initscript
   #Clean up
+  cd ..
   rm -r earlyoom-master
   rm earlyoom.zip
 fi
