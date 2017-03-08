@@ -1,3 +1,4 @@
+#!/bin/bash
 #This script install earlyoom
 #Check for root
 if [ $(whoami) != "root" ]

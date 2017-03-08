@@ -1,3 +1,4 @@
+#!/bin/bash
 #Check for $1
 if [ -z $1 ]
 then

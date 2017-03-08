@@ -1,3 +1,4 @@
+#!/bin/bash
 #This script installs the rest of the repository
 #If the directory already exists
 if [ -d "Scripts" ]

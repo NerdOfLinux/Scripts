@@ -1,3 +1,4 @@
+#!/bin/bash
 #Update script for Ubuntu
 #Check that user is root
 if [ $(whoami) != "root" ]

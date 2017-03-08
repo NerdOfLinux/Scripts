@@ -1,3 +1,4 @@
+#!/bin/bash
 #This script uses clamav
 #Chck if clamscan in installed
 if [ $(which clamscan) ]
