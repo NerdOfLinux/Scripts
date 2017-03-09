@@ -243,7 +243,7 @@ else
 	elif [ $cipher = "3" ]
 	then
 		echo "Please enter the cipher you would like to use(from openvpn --show-ciphers)"
-		read -p "Cipher: " -e -i aes-256-cbc encryption
+		read -p "Cipher: " -e -i AES-256-CBC encryption
 	fi
 	echo ""
 	echo "How often would you like to renegotiate the keys?(if you're unsure, just press enter)"
