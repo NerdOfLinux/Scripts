@@ -240,7 +240,7 @@ else
 			camellia=256
 		fi
 		encryption="CAMELLIA-"$camellia"-CBC"
-	elif [ $cipher = "3"]
+	elif [ $cipher = "3" ]
 	then
 		echo "Please enter the cipher you would like to use(from openvpn --show-ciphers)"
 		read -p "Cipher: " -e -i aes-256-cbc encryption
