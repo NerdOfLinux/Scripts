@@ -2,7 +2,7 @@
 Random Ubuntu Scripts
 These should work with debian and other debian-based distros
 
-<a href="http://www.vultr.com/?ref=7127461" target="_blank">If you need a server to run any of the scripts on here(like the OpenVPN script), Vultr provides servers for only $2.50 a month. </a>
+<a href="http://www.vultr.com/?ref=7127461">If you need a server to run any of the scripts on here(like the OpenVPN script), Vultr provides servers for only $2.50 a month. </a>
 
 To download with git, run: git clone https://github.com/NerdOfLinux/Scripts.git
 
