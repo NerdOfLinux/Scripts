@@ -39,6 +39,6 @@ then
 	echo "Cleaning apt cache..."	
 	eval $APT clean
 	eval $APT autoclean
-	echo "Removing old/unused packages..."
-	eval $APT autoremove -y
+	echo "Press 'y' to remove old/unused packages..."
+	eval $APT autoremove
 fi
