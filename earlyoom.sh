@@ -31,9 +31,9 @@ then
   fi
   cd earlyoom-master
   echo "Please enter the minimum percent of free ram(leave blank if unsure):"
-  read ram
+  read -p "RAM%: " ram
   echo "Please enter the minimum percent of free swap(leave blank if unsure):"
-  read swap
+  read -p "Swap%: " swap
   #If blank, then use defualt
   ram="${ram:-10}"
   swap="${swap:-10}"
