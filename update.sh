@@ -32,7 +32,8 @@ then
 	rm /var/lib/dpkg/lock &
 	dpkg --configure -a
 	eval $APT update
-	eval $APT -f -y install
+	echo "Press 'y' to fix broken packages(if there are no warnings about removing essential packeges, etc.)"
+	eval $APT -f install
 #Else if $1 is clean
 elif [ $1 = "clean" ]
 then
