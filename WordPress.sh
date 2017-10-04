@@ -30,7 +30,7 @@ fi
 #Check for installed packages
 echo "Checking installed packages..."
 apps=$(dpkg --list)
-if [ $(check_installed $apps "apache2") ] || [ $(check_installed $apps "nginx") ] || [ $(check_installed $apps "mysql") ]
+if check_installed $apps "apache2") || check_installed $apps "nginx" || check_installed $apps "mysql"
 then
   echo "Warning, you appear to have some web hosting and/or database software installed."
   echo "This script will OVERWRITE those. Please make a backup of all current contents."
@@ -59,11 +59,11 @@ rsync -av wordpress/* /var/www/html
 chown -R www-data /var/www/html
 #Make DB
 echo "Creating DB..."
-echo "CREATE DATABASE wp_myblog" | mysql 
+echo "CREATE DATABASE wp_myblog;" | mysql 
 #Generate password
 password=$(openssl rand -base64 32)
 echo "GRANT ALL PRIVILEGES ON wp_myblog.* TO 'wp-user'@'localhost' IDENTIFIED BY \"$password\";" | mysql
-echo "FLUSH PRIVILEGES" | mysql
+echo "FLUSH PRIVILEGES;" | mysql
 #set up wp-config.php
 cd /var/www/html
 cat > wp-config.php <<EOF
