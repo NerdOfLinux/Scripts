@@ -1,5 +1,5 @@
 #!/bin/bash
-#THIS SCRIPT IS IN BETA AND HAS NOT BEEN TESTED YET
+#THIS SCRIPT IS IN BETA AND MAY NOT WORK
 #Make function to check for installed apps
 check_installed(){
   installed=$1
