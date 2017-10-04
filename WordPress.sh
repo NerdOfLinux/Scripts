@@ -20,12 +20,16 @@ then
 fi
 #Print welcome messages
 echo "This script will help you install the WordPress CMS on your server."
-echo "This script will only work on Ubuntu or Debian distros, are you on a Debian Based distro?"
-read -p "y)es or n)o?: " yesno1
-if [ $yesno1 != "y" ]
+#From https://unix.stackexchange.com/questions/29981/how-can-i-tell-whether-a-build-is-debian-based
+if [ ! -f "/etc/debian_version" ]
 then
-  echo "Sorry, more Operating System support will be coming soon."
-  exit 0
+	echo "This script will only work on Ubuntu or Debian distros, are you on a Debian Based distro?"
+	read -p "y)es or n)o?: " yesno1
+	if [ $yesno1 != "y" ]
+	then
+ 	  echo "Sorry, more Operating System support will be coming soon."
+ 	  exit 0
+	fi
 fi
 #Check for installed packages
 echo "Checking installed packages..."
