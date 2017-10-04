@@ -1,8 +1,8 @@
 #!/bin/bash
 #Make function to check for installed apps
 check_installed(){
-  installed = $1
-  checkFor = $2
+  installed=$1
+  checkFor=$2
   if echo "$installed" | grep "$checkFor"
   then
     return 1
