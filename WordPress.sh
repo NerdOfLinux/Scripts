@@ -49,7 +49,7 @@ echo "Installing PHP..."
 apt install -y  php7.0 php7.0-mysql libapache2-mod-php7.0 php7.0-cli php7.0-cgi php7.0-gd
 echo "Installing MariaDB: "
 echo "Please remember the password you enter if you are promtped for one."
-apt install -y mariadb*
+apt install -y mariadb-server-10.0
 echo "Required packages installed... moving on"
 echo "Downloading WordPress..."
 cd /tmp
