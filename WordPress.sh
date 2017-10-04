@@ -35,7 +35,12 @@ then
   echo "Warning, you appear to have some web hosting and/or database software installed."
   echo "This script will OVERWRITE those. Please make a backup of all current contents."
   echo "Type 'y' if you already have a backup..."
-  read -p "Do you have a backup?: " alreadyInstalled
+  read -p "Do you have a backup y)es or n)o?: " alreadyInstalled
+  if [ $alreadyInstalled != "y" ]
+  then
+    echo "OK. Bye"
+    exit 0
+  fi
 fi
 #Install required packages
 echo "Installing apache2..."
