@@ -34,7 +34,7 @@ fi
 #Check for installed packages
 echo "Checking installed packages..."
 apps=$(dpkg --list)
-if check_installed $apps "apache2") || check_installed $apps "nginx" || check_installed $apps "mysql"
+if check_installed $apps "apache2" || check_installed $apps "nginx" || check_installed $apps "mysql"
 then
   echo "Warning, you appear to have some web hosting and/or database software installed."
   echo "This script will OVERWRITE those. Please make a backup of all current contents."
