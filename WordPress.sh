@@ -66,7 +66,7 @@ echo "Creating DB..."
 mysql --execute "CREATE DATABASE wp_myblog;"
 #Generate password
 password=$(openssl rand -base64 32)
-mysql --execute "GRANT ALL PRIVILEGES ON wp_myblog.* TO 'wp-user'@'localhost' IDENTIFIED BY \"$password\";"
+mysql --execute "GRANT ALL PRIVILEGES ON wp_myblog.* TO wp_user IDENTIFIED BY \"$password\";"
 mysql --execute "FLUSH PRIVILEGES;"
 #set up wp-config.php
 cd /var/www/html
