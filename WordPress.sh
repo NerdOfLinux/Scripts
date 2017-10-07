@@ -63,11 +63,11 @@ rsync -av wordpress/* /var/www/html
 chown -R www-data /var/www/html
 #Make DB
 echo "Creating DB..."
-echo "CREATE DATABASE wp_myblog;" | mysql 
+mysql --execute "CREATE DATABASE wp_myblog;"
 #Generate password
 password=$(openssl rand -base64 32)
-echo "GRANT ALL PRIVILEGES ON wp_myblog.* TO 'wp-user'@'localhost' IDENTIFIED BY \"$password\";" | mysql
-echo "FLUSH PRIVILEGES;" | mysql
+mysql --execute "GRANT ALL PRIVILEGES ON wp_myblog.* TO 'wp-user'@'localhost' IDENTIFIED BY \"$password\";"
+mysql --execute "FLUSH PRIVILEGES;"
 #set up wp-config.php
 cd /var/www/html
 cat > wp-config.php <<EOF
