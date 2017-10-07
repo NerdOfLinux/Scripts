@@ -141,6 +141,10 @@ if ( !defined('ABSPATH') )
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');
 EOF
+#Restart apache2 and delete index.html
+echo "Restarting apache..."
+apachectl restart
+rm /var/www/html/index.html 2>/dev/null
 #Get IP
 ip=$(dig +short myip.opendns.com @resolver1.opendns.com)
 echo "Install done, finish setting up at: http://$ip or your domain name."
