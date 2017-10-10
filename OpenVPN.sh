@@ -1,4 +1,5 @@
 #!/bin/bash
+#This script is licensed under the MIT license
 # OpenVPN road warrior installer for Debian, Ubuntu and CentOS
 
 # This script will work on Debian, Ubuntu, CentOS and probably other distros
@@ -264,12 +265,12 @@ else
 	fi
 	# An old version of easy-rsa was available by default in some openvpn packages
 	# Get easy-rsa
-	wget -O ~/EasyRSA-3.0.1.tgz https://github.com/OpenVPN/easy-rsa/releases/download/3.0.1/EasyRSA-3.0.1.tgz
-	tar xzf ~/EasyRSA-3.0.1.tgz -C ~/
-	mv ~/EasyRSA-3.0.1/ /etc/openvpn/
-	mv /etc/openvpn/EasyRSA-3.0.1/ /etc/openvpn/easy-rsa/
+	wget -O ~/EasyRSA-3.0.3.tgz https://github.com/OpenVPN/easy-rsa/releases/download/v3.0.3/EasyRSA-3.0.3.tgz
+	tar xzf ~/EasyRSA-3.0.3.tgz -C ~/
+	mv ~/EasyRSA-3.0.3/ /etc/openvpn/
+	mv /etc/openvpn/EasyRSA-3.0.3/ /etc/openvpn/easy-rsa/
 	chown -R root:root /etc/openvpn/easy-rsa/
-	rm -rf ~/EasyRSA-3.0.1.tgz
+	rm -rf ~/EasyRSA-3.0.3.tgz
 	cd /etc/openvpn/easy-rsa/
 	cp vars.example vars
 	#Change rsa key size
