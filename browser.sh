@@ -6,14 +6,16 @@ check_install()
     if [ $(which $browser) ]
     then
         install_status="True"
+        echo "Already installed."
+        exit
     else
         install_status="False"
     fi
-    if [ $install_status = "True" ]
-    then
-        echo "Already installed."
-        exit
-    fi
+    #if [ $install_status = "True" ]
+    #then
+    #    echo "Already installed."
+    #    exit
+    #fi
 }
 #Check for root
 if [ $(whoami) != "root" ]
@@ -29,7 +31,7 @@ else
     browser=$1
 fi
 #For opera
-if [ $browser = "opera" ]
+if [ $browser == "opera" ]
     #Check install status  
     check_install $browser
     if [ $install_status = "False" ]
@@ -41,13 +43,14 @@ if [ $browser = "opera" ]
         exit
     fi
 #Else if browser is chrome
-elif [ $browser = "crhome" ]
+elif [ $browser == "crhome" ]
     #Check install status  
     check_install $browser
-    if [ $install_status = "False" ]
+    if [ $install_status == "False" ]
         #Install
         wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
         dpkg -i google-chrome-stable_current_amd64.deb
+        echo "Run google-chrome-stable to launch!"
     else
         echo "Error, please try again"
         exit
