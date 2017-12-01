@@ -29,6 +29,7 @@ then
   else
     folder=$1
   fi
+  echo "Be aware that viruses will be moved into the folder $(pwd)/found_viruses. If it is not really a virus, check $(pwd)/clamscan.log to see where it originally was."
   #Scan with max file size of 1GB
   clamscan -r --move=found_viruses --max-filesize=1024M  --max-scansize=1024M $folder -i -l clamscanlog.txt
 #If freshclam is not found
