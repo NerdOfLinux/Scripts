@@ -6,9 +6,17 @@ These should work with debian and other debian-based distros
 
 <a href="https://www.vultr.com/?ref=7127461"><img src="https://www.vultr.com/media/banner_1.png" width="728" height="90"></a>
 
-To download with git, run: git clone https://github.com/NerdOfLinux/Scripts.git
+To download with git, run: 
+```shell
+git clone https://github.com/NerdOfLinux/Scripts.git
+```
 
-To download without git, run: wget https://raw.githubusercontent.com/NerdOfLinux/Scripts/master/download.sh; bash download.sh
+To download without git, run: 
+```shell
+wget https://raw.githubusercontent.com/NerdOfLinux/Scripts/master/download.sh; bash download.sh
+```
 
-Or with curl: curl https://raw.githubusercontent.com/NerdOfLinux/Scripts/master/download.sh | bash
-
+Or with curl:
+```shell
+curl https://raw.githubusercontent.com/NerdOfLinux/Scripts/master/download.sh | bash
+```
