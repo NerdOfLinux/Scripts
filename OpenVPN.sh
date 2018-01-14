@@ -1,5 +1,6 @@
 #!/bin/bash
 #This script is licensed under the MIT license
+# Original is from https://github.com/Nyr/openvpn-install
 # OpenVPN road warrior installer for Debian, Ubuntu and CentOS
 
 # This script will work on Debian, Ubuntu, CentOS and probably other distros
