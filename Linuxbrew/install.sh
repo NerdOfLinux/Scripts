@@ -28,8 +28,8 @@ then
   fi
 fi
 #This script is to set up linuxbrew
-echo "Would you like to install linuxbrew y)es or n)o?"
-read answer
+echo "Would you like to install linuxbrew?"
+read -p "y)es or n)o?: " answer
 #If the answer is not equal to y
 if [ $answer != "y" ]
 then
@@ -68,8 +68,8 @@ then
   echo "Fixing any issues..."
   #Check for errors
   brew doctor
-  echo "Would you like to test linuxbrew y)es or n)o?"
-  read test
+  echo "Would you like to test linuxbrew?"
+  read -p " y)es or n)o?: " test
   #If test is not equal to y
   if [ $test != "y" ]
   then
@@ -83,8 +83,8 @@ then
       echo "An error has occured."
     fi
   fi
-  echo "Would you like to disable linuxbrew analytics y)es or n)o?"
-  read analytics
+  echo "Would you like to disable linuxbrew analytics?"
+  read -p " y)es or n)o?: " analytics
   if [ $analytics = "y" ]
   then
     brew analytics off
