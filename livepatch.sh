@@ -8,7 +8,7 @@ fi
 #Check for ubuntu
 if ! lsb_release -d | grep -i "ubuntu" >/dev/null
 then
-  echo "This script only works on Ubunt"
+  echo "This script only works on Ubuntu"
   exit 2
 fi
 
