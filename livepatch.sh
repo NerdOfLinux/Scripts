@@ -6,9 +6,9 @@ then
 fi
 
 #Check for ubuntu
-if [ $(lsb_release -d | cut -d " " -f 1) != "Ubuntu" ]
-then 
-  echo "This script only works on Ubuntu."
+if ! lsb_release -d | grep -i "ubuntu" >/dev/null
+then
+  echo "This script only works on Ubunt"
   exit 2
 fi
 
@@ -23,6 +23,7 @@ then
   echo "Already installed. Would you like to continue?"
   read -p "y)es or n)o: " yesno
   if [ $yesno != "y" ]
+  then
     echo "Good choice. Bye."
     exit 4
   fi
