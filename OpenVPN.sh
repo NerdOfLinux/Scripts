@@ -266,10 +266,11 @@ else
 	fi
 	# An old version of easy-rsa was available by default in some openvpn packages
 	# Get easy-rsa
+	mkdir /etc/openvpn
 	wget -O ~/EasyRSA-3.0.3.tgz https://github.com/OpenVPN/easy-rsa/releases/download/v3.0.3/EasyRSA-3.0.3.tgz
 	tar xzf ~/EasyRSA-3.0.3.tgz -C ~/
-	mv ~/EasyRSA-3.0.3/ /etc/openvpn/
-	mv /etc/openvpn/EasyRSA-3.0.3/ /etc/openvpn/easy-rsa/
+	mv ~/EasyRSA-3.0.3/ /etc/openvpn/easy-rsa
+	#mv /etc/openvpn/EasyRSA-3.0.3/ /etc/openvpn/easy-rsa/
 	chown -R root:root /etc/openvpn/easy-rsa/
 	rm -rf ~/EasyRSA-3.0.3.tgz
 	cd /etc/openvpn/easy-rsa/
