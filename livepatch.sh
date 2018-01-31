@@ -38,7 +38,7 @@ snap install core
 echo "Installing livepatch"
 snap install canonical-livepatch
 echo "Please get your token from https://auth.livepatch.canonical.com/"
-read -p "Token" $token
+read -p "Token: " token
 canonical-livepatch enable $token
 if [ $? -eq 0 ]
 then
