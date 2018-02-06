@@ -1,6 +1,6 @@
 #!/bin/bash
 #Set cache folder
-ipcache="/mnt/extra/.ipcache"
+ipcache=".ipcache"
 #If the cache folder is not present, create
 if [ ! -d $ipcache ]
 then
