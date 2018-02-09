@@ -11,15 +11,26 @@ EOF
 echo "Please select a user: "
 #Pipe all users into column to support large amounts of users
 who | cut -d " " -f 1 | column
-#Get your PTS
-yourPTS=$(tty | cut -d "/" -f 3,4)
 read -p "User: " userName
+#Check if user exists and is logged on
+for loggedIn in $(who | cut -d " " -f 1)
+do
+	if [ $loggedIn = $userName ]
+	then
+		userFound="yes"
+		echo "User found..."
+		break
+	fi
+done
+if [ -z $userFound ]
+then
+	echo "User could NOT be found"
+	exit 2
+fi
 echo "What is your message?"
 read -p "Message: " message
-#Get the user's PTS
-userPTS=$(ps -u "$userName" | grep pts | cut -d " " -f 2 | head -n 1)
 #Verify you're not writing to yourself
-if [ "$userPTS" = "$yourPTS" ]
+if [ "$USER" = "$userName" ]
 then
         echo "Warning! You are writing to yourself"
         read -p "Type 'y' to continue: " yesNo
@@ -30,5 +41,5 @@ then
         fi
 fi
 #Actually write the message
-echo "$message" | write "$userName" "$userPTS"
-echo "Wrote \"$message\" to $userName on $userPTS"
+echo "$message" | write "$userName" >/dev/null 2>&1
+echo "Wrote \"$message\" to $userName"
