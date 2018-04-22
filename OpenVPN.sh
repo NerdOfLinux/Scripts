@@ -192,6 +192,7 @@ else
 	echo "   4) NTT"
 	echo "   5) Hurricane Electric"
 	echo "   6) Google"
+	echo "   7) 1.1.1.1"
 	read -p "DNS [1-6]: " -e -i 1 DNS
 	echo ""
 	echo "Finally, tell me your name for the client cert"
@@ -214,16 +215,17 @@ else
 		echo "   2) 192"
 		echo "   3) 256"
 		read -p "Encryption: " -e -i 1 aes
-		if [ $aes = "1" ]
-		then
+		case $aes in
+			1)
 			aes=128
-		elif [ $aes = "2" ]
-		then
+			;;
+			2)
 			aes=192
-		elif [ $aes = "3" ]
-		then
+			;;
+			3)
 			aes=256
-		fi
+			;;
+		esac
 		encryption="AES-"$aes"-CBC"
 	elif [ $cipher = "2" ]
 	then
@@ -232,16 +234,17 @@ else
 		echo "   2) 192"
 		echo "   3) 256"
 		read -p "Encryption: " -e -i 1 camellia
-		if [ $camellia = "1" ]
-		then
+		case $camellia in
+			1)
 			camellia=128
-		elif [ $camellia = "2" ]
-		then
+			;;
+			2)
 			camellia=192
-		elif [ $camellia = "3" ]
-		then
+			;;
+			3)
 			camellia=256
-		fi
+			;;
+		esac
 		encryption="CAMELLIA-"$camellia"-CBC"
 	elif [ $cipher = "3" ]
 	then
@@ -332,6 +335,10 @@ echo 'push "redirect-gateway def1 bypass-dhcp"' >> /etc/openvpn/server.conf
 		6)
 		echo 'push "dhcp-option DNS 8.8.8.8"' >> /etc/openvpn/server.conf
 		echo 'push "dhcp-option DNS 8.8.4.4"' >> /etc/openvpn/server.conf
+		;;
+		7)
+		echo 'push "dhcp-option DNS 1.1.1.1"' >> /etc/openvpn/server.conf
+		echo 'push "dhcp-option DNS 1.0.0.1"' >> /etc/openvpn/server.conf
 		;;
 	esac
 	echo "keepalive 10 120
