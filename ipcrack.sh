@@ -31,6 +31,11 @@ then
 fi
 #Get the IP of the MX record
 ip=$(dig +short $mx | head -n 1)
+if [ -z "$ip" ]
+then
+	echo "No IP found :-("
+	exit
+fi
 echo "____________________"
 echo ""
 echo "Trying: $ip"
