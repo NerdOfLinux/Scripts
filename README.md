@@ -21,4 +21,12 @@ Or with curl:
 curl https://raw.githubusercontent.com/NerdOfLinux/Scripts/master/download.sh | bash
 ```
 
+## For more info
+If you need help with a specific script, please check the Wiki.
 
+## Issues
+If you find any problems, please do one of the following:
+
+* File an issue
+* [Email me](mailto:github@nerdoflinux.com)
+* Fix it and file a pull request
