@@ -37,9 +37,12 @@ echo "Trying: $ip"
 echo "____________________"
 echo ""
 #Check for Content-Type of HTML
-if curl -ks http://$website --header "Host: $website" | grep "$website" >/dev/null || curl -ks https://$website --header "Host: $website" | grep "$website" >/dev/null
+if curl -ks http://$ip --header "Host: $website" | grep "$website" >/dev/null || curl -ks https://$ip --header "Host: $website" | grep "$website" >/dev/null
 then
 	echo "$ip seems to host $website"
+elif curl -ksI http://$ip --header "Host: $website" | grep "Content-Type: text/html" >/dev/null || curl -ksI https://$ip | grep "Content-Type: text/html" >/dev/null
+then
+	echo "$ip seems to host a website, but we're not sure if it's $website"
 else
 	echo "$ip does not appear to host a website"
 fi
