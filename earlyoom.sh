@@ -39,7 +39,7 @@ then
   swap="${swap:-10}"
   replace="int mem_min_percent = $ram, swap_min_percent = $swap;"
   #Replace line with set variable
-  sed -i "s/int mem_min_percent = 10, swap_min_percent = 10;/$replace/g" main.c
+  sed -i "s/int mem_min_percent = 0, swap_min_percent = 0;/$replace/g" main.c
   #Install
   make
   make install
