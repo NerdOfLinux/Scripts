@@ -2,9 +2,7 @@
 Random Ubuntu Scripts
 These should work with debian and other debian-based distros
 
-<a href="http://www.vultr.com/?ref=7127461">If you need a server to run any of the scripts on here(like the OpenVPN script), Vultr provides servers for only $2.50 a month. </a>
-
-<a href="https://www.vultr.com/?ref=7127461"><img src="https://www.vultr.com/media/banner_1.png" width="728" height="90"></a>
+If you need a VPS, I highly recommend [DigitalOcean](https://m.do.co/c/f941d4888bfb). They have plans starting at just $5 a month, and you get **$10 of credit** simply by signing up with [this link](https://m.do.co/c/f941d4888bfb). Using that link also helps me pay for my DigitalOcean VPS's, so it's a win-win(free credit for everyone!).
 
 To download with git, run: 
 ```shell
