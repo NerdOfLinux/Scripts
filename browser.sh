@@ -21,6 +21,7 @@ check_install()
 if [ $(whoami) != "root" ]
 then
     echo "Please run as root."
+    exit
 fi
 #If $1 is blank, then get browser
 if [ -z $1 ]
@@ -32,9 +33,11 @@ else
 fi
 #For opera
 if [ $browser == "opera" ]
-    #Check install status  
+then
+   #Check install status  
     check_install $browser
     if [ $install_status = "False" ]
+    then
         #Install
         wget http://download2.operacdn.com/pub/opera/desktop/45.0.2552.812/linux/opera-stable_45.0.2552.812_amd64.deb
         dpkg -i opera-stable_45.0.2552.812_amd64.deb
@@ -44,9 +47,11 @@ if [ $browser == "opera" ]
     fi
 #Else if browser is chrome
 elif [ $browser == "crhome" ]
+then
     #Check install status  
     check_install $browser
     if [ $install_status == "False" ]
+    then
         #Install
         wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
         dpkg -i google-chrome-stable_current_amd64.deb
@@ -55,3 +60,4 @@ elif [ $browser == "crhome" ]
         echo "Error, please try again"
         exit
     fi
+fi
