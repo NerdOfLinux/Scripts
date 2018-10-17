@@ -222,8 +222,8 @@ else
 	read -p "Cipher: " -e -i 1 cipher
 	echo ""
 	#Get cipher
-	if [ $cipher = "1" ]
-	then
+	case $cipher in
+	1)
 		echo "Which AES size would you like?"
 		echo "   1) 128"
 		echo "   2) 192"
@@ -241,8 +241,8 @@ else
 			;;
 		esac
 		encryption="AES-"$aes"-CBC"
-	elif [ $cipher = "2" ]
-	then
+		;;
+	  2)
 		echo "Which CAMELLIA size would you like?"
 		echo "   1) 128"
 		echo "   2) 192"
@@ -260,11 +260,12 @@ else
 			;;
 		esac
 		encryption="CAMELLIA-"$camellia"-CBC"
-	elif [ $cipher = "3" ]
-	then
+		;;
+	3)
 		echo "Please enter the cipher you would like to use(from openvpn --show-ciphers)"
 		read -p "Cipher: " -e -i AES-256-GCM encryption
-	fi
+		;;
+	esac
 	echo ""
 	echo "How often would you like to renegotiate the keys?(if you're unsure, just press enter)"
 	read -p  "reneg-secs: " -e -i 3600 reneg
