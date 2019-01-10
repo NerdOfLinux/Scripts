@@ -1,29 +1,29 @@
 #!/bin/bash
-#Update script for Ubuntu
-#Check that user is root
+# Update script for Ubuntu
+# Check that user is root
 if [ $(whoami) != "root" ]
 then
     echo "Please run as root."
     #Exit
     exit 0
 fi
-#If apt is present
+# If apt is present
 if [ $(which apt) ]
 then
 	APT="apt"
-#Else if apt-get is present
+# Else if apt-get is present
 elif [ $(which apt-get) ]
 then
 	APT="apt-get"
 fi
-#If $1 is empty
+# If $1 is empty
 if [ -z $1 ]
 then
     echo "Updating package indexes..."
     $APT update
-    echo "Upgrading..."
+    echo "Upgrading packages..."
     $APT upgrade -y
-#Else if $1 is fix
+# Else if $1 is fix
 elif [ $1 = "fix" ]
 then
     # Remove lock files
@@ -37,7 +37,7 @@ then
     echo "Press 'y' to fix broken packages(if there are no warnings about removing essential packeges, etc.)"
     # Fix broken installs
     $APT -f install
-#Else if $1 is clean
+# Else if $1 is clean
 elif [ $1 = "clean" ]
 then
     echo "Cleaning apt cache..."	

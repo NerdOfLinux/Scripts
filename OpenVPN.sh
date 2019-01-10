@@ -1,8 +1,6 @@
 #!/bin/bash
 # Original script located at https://github.com/Nyr/openvpn-install
 
-
-
 # Detect Debian users running the script with "sh" instead of bash
 if readlink /proc/$$/exe | grep -q "dash"; then
 	echo "This script needs to be run with bash, not sh"
