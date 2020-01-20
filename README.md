@@ -2,8 +2,6 @@
 Random Ubuntu Scripts
 These should work with debian and other debian-based distros
 
-If you need a VPS, I highly recommend DigitalOcean. They have plans starting at just $5 a month, and you get **$10 of credit** simply by signing up with [this link](https://m.do.co/c/f941d4888bfb). Using that link also helps me pay for my DigitalOcean VPS's, so it's a win-win(free credit for everyone!).
-
 To download with git, run: 
 ```shell
 git clone https://github.com/NerdOfLinux/Scripts.git
