@@ -1,3 +1,5 @@
+**Note**: Unfortunately, I haven't had time to work on these scripts in a while, and likely won't have time in the future either. While most of these scripts will still work, they are no longer actively maintained.
+
 # Scripts
 Random Ubuntu Scripts
 These should work with debian and other debian-based distros
